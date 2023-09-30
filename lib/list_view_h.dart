@@ -23,7 +23,16 @@ class _ListViewHState extends State<ListViewH> {
               Text('8:59'),
             ],
           ),
-          trailing: const Icon(Icons.menu),
+          trailing: PopupMenuButton<String>(
+            onSelected: (menu) {
+              print(menu);
+            },
+            itemBuilder: (BuildContext bc) {
+              return <PopupMenuItem<String>>[
+                PopupMenuItem<String>(value: 'opcao1', child: Text('Opção 1'),),
+                PopupMenuItem<String>(value: 'opcao2', child: Text('Opção 2'),),
+                ];
+          }),
         ),
         Image.asset(UserImagens.user1),
         Image.asset(UserImagens.user2),
